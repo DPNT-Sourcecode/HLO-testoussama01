@@ -1,15 +1,17 @@
-﻿namespace BeFaster.App.Tests;
+﻿using BeFaster.App.Solutions.HLO;
+using BeFaster.App.Solutions.SUM;
+using NUnit.Framework;
 
-public class HelloSolutionTest
+namespace BeFaster.App.Tests.Solutions.HLO
 {
-    [SetUp]
-    public void Setup()
+    [TestFixture]
+    public class HelloSolutionTest
     {
-    }
-
-    [Test]
-    public void Test1()
-    {
-        Assert.Pass();
+        [TestCase("oussama", ExpectedResult = "Hello oussama")]
+        public string SayHello(string name)
+        {
+            return HelloSolution.Hello(name);
+        }
     }
 }
+
